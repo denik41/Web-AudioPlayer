@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dima's task</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="WebPlayer.js"></script>
+    <script src="appFunctionality.js"></script>
+</head>
+
+<body>
+<table align="left" cellpadding="5" cellspacing="10">
+    <tr>
+        <td valign="top">
+            <p style="margin-top: 0">Введіть логін користувача :
+                <input type="text" id="login" size="20" maxlength="40" pattern="[A-Za-z0-9]{3,}" required
+                       placeholder="Enter your login" onchange="enterUser()">
+            </p>
+            <input type="file" accept="audio/*" id="mpfile" onchange="downloadSong(); setDefaultPlayerProp()">
+            <p>Часові проміжки :
+                <input type="text" id="time1" size="5" maxlength="5" onchange="setTimingFirst()"> -
+                <input type="text" id="time2" size="5" maxlength="5" onchange="setTimingSecond()">
+            </p>
+            <audio id="audio" ontimeupdate="showTime(); showProgress()"
+                   ondurationchange="showDuration()" onpause="showPlay()" onplaying="showPause()">
+            </audio>
+            <div class="player" id="player" onmousedown="return false">
+                <div class="player-button" onclick="playButtonClick()">
+                    <canvas id="play-pause" width="30" height="25"></canvas>
+                </div>
+                <div class="timer">
+                    <span id="timer" class="timer">00:00</span>
+                </div>
+                <div class="progressing">
+                    <canvas id="progressing" class="progressing"
+                            onclick="if (document.getElementById('mpfile').files[0]) {clickProgressBar()}">
+                    </canvas>
+                    <div id="leftCutBorder"></div>
+                    <div id="rightCutBorder"></div>
+                </div>
+                <div class="volume">
+                    <span id="volOffOn" class="volume" onclick="clickVolOffOn()">VOL</span>
+                    <div class="volumeValue">
+                        <canvas id="volumeValue" onclick="clickVolume()"></canvas>
+                    </div>
+                </div>
+            </div>
+            <p><input type="button" id="button" value="Обрізати пісню"
+                      onclick="cutSong()">
+                <input type="button" value="Повна версія" onclick="returnFullVersion()"></p>
+            <p id="errorMessage"></p>
+        </td>
+        <td><p style="margin-top: 0">Лог користувачів</p>
+            <textarea readonly cols="70" rows="15" id="usersLog" wrap="off" style="resize: vertical"></textarea>
+        </td>
+    </tr>
+</table>
+</body>
+
+</html>

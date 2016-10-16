@@ -1,0 +1,142 @@
+div.player {
+    background-color: #F79C13;
+    width: 433px;
+    height: 25px;
+    border-color: #000000;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 3px;
+    position: relative;
+    margin-top: 15px;
+}
+
+div.player-button {
+    width: 30px;
+    height: 100%;
+    background-color: #5A5950;
+    float: left;
+    cursor: pointer;
+}
+
+div.player-button:hover {
+    background-color: white;
+}
+
+div.progressing {
+    position: relative;
+    width: 250px;
+    height: 100%;
+    left: 73px;
+}
+
+canvas.progressing {
+    position: absolute;
+    left: 0px;
+    top: 8px;
+    border-radius: 3px;
+    width: 250px;
+    height: 10px;
+    background-color: white;
+}
+
+canvas.progressing:hover {
+    border: 1px solid black;
+}
+
+div.timer {
+    width: 43px;
+    height: 100%;
+    float: left;
+}
+
+span.timer {
+    border-radius: 5px;
+    background-color: #5A5950;
+    color: white;
+    font-size: 15px;
+    padding: 1px 1px 1px 1px;
+    position: relative;
+    left: 2px;
+    top: 3px;
+}
+
+div.volume {
+    padding-top: 3px;
+    top: 0px;
+    width: 110px;
+    height: 100%;
+    position: absolute;
+    left: 325px;
+    color: white;
+}
+
+span.volume {
+    font-size: 12px;
+    padding-left: 3px;
+    cursor: pointer;
+}
+
+span.volume:hover {
+    color: black;
+    font-size: 14px;
+}
+
+div.volumeValue {
+    width: 75px;
+    height: 100%;
+    position: relative;
+    left: 33px;
+    top: -21px;
+}
+
+#volumeValue {
+    border-radius: 3px;
+    width: 70px;
+    height: 10px;
+    margin-left: 0px;
+    margin-top: 8px;
+    background-color: white;
+}
+
+#volumeValue:hover {
+    border: 1px solid black;
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 999;
+    display: none;
+    width: 40px;
+    height: 15px;
+}
+
+.tooltip p {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+#leftCutBorder {
+    background-color: #15A001;
+    width: 2px;
+    height: 15px;
+    position: relative;
+    top: 8px;
+    cursor: pointer;
+}
+
+#rightCutBorder {
+    background-color: red;
+    width: 2px;
+    height: 15px;
+    position: absolute;
+    top: 8px;
+    right: 0px;
+    cursor: pointer;
+}
+
+#errorMessage {
+    color: red;
+}
